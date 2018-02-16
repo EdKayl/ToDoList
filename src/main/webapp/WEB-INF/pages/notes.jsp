@@ -101,12 +101,23 @@
 </c:if>
 <br>
 <br>
-<form action="/notes/add" name="newNote" method="post">
+<form action="/note/add" name="newNote" method="post" class="addNote">
     <fieldset>
         <legend>Добавить задачу</legend>
-        <p><label for="addedDate">Дата:</label><input type="date" id="addedDate" name="addedDate"></p>
-        <p><label for="subject">Задача: </label><input type="text" id="subject" name="subject"></p>
-        <p><label for="description">Описание:</label><input type="text" id="description" name="description"></p>
+        <table>
+            <tr>
+                <td>Дата:</td>
+                <td><input type="date" id="addedDate" name="addedDate"></td>
+            </tr>
+            <tr>
+                <td>Задача:</td>
+                <td><textarea cols="20" rows="4" id="subject" name="subject"></textarea></td>
+            </tr>
+            <tr>
+                <td>Описание:</td>
+                <td><textarea cols="20" rows="7" id="description" name="description"></textarea></td>
+            </tr>
+        </table>
     </fieldset>
     <p><input type="submit" value="Добавить"></p>
 </form>

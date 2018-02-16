@@ -59,7 +59,7 @@ public class MainController {
         return "notes";
     }
 
-    @RequestMapping(value="/notes/add", method = RequestMethod.POST)
+    @RequestMapping(value="/note/add", method = RequestMethod.POST)
     public String addNote(@ModelAttribute("note") Note note) {
         notesRepository.save(note);
         return "redirect:/";
@@ -79,8 +79,16 @@ public class MainController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/note/save", method = RequestMethod.POST)
-    public String saveNote(@ModelAttribute("note") Note note) {
+    @RequestMapping(value = "/note/save", method = RequestMethod.POST)
+    public String saveNote(@ModelAttribute("note") Note note,
+                           @ModelAttribute("id") String id,
+                           @ModelAttribute("done") String done) {
+        if("".equals(done)) {
+            note.setDone(false);
+        } else {
+            note.setDone(true);
+        }
+        note.setId(Long.parseLong(id));
         notesRepository.save(note);
         return "redirect:/";
     }

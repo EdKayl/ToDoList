@@ -1,6 +1,9 @@
 .table_header {
     cursor: pointer;
 }
+.addNote {
+    width: auto;
+}
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
