@@ -92,6 +92,4 @@ public class MainController {
         notesRepository.save(note);
         return "redirect:/";
     }
-
-
 }
